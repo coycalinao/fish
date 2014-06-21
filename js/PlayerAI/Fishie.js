@@ -181,7 +181,7 @@ function TestBot(){
  							var new_node = new this.Node(new_node_x, new_node_y, -1, -1, closed.length-1);
  
  							new_node.g = current_node.g + Math.floor(Math.sqrt(Math.pow(new_node.x-current_node.x, 2)+Math.pow(new_node.y-current_node.y, 2)));
- 							new_node.h = 0//this.heuristic(new_node, destination);
+ 							new_node.h = 0;//this.heuristic(new_node, destination);
  							new_node.f = new_node.g+new_node.h;
  
  							open.push(new_node);
