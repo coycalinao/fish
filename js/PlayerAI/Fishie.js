@@ -81,14 +81,49 @@ function TestBot(){
 	}
 
 	this.thinkAI= function(player, enemies, maplayout, end) {
-		var closed = new Array();
-		var open = new Array();
-		open.push(start);
+		var k = 0;
+		var x;
+		var y;
+		
+		var arr = [];
+		arr = astar(maplayout, player, enemies, end, 20, 20);
+		
+		if(k < arr.length)
+		{
+			if(arr[k].y - 1 == arr[k+1].y)
+			{	
+				player.MoveUp();
+	
+			}
+		
+			else if(arr[k].y + 1 == arr[k+1].y)
+			{	
+				player.MoveDown();
+	
+			}
+	
+			else if(arr[k].x - 1 == arr[k+1].x)
+			{	
+				player.MoveLeft();
+	
+			}
+	
+			else if(arr[k].x + 1 == arr[k+1].x)
+			{	
+				player.MoveRight();
+	
+			}
+			k++;
+		}
+		else
+		{
+			k = 0;
+		}
 		
 
 	}
 
-	this.astarrrrrrrrrrrrrrrr = function(maplayout, player, enemy, end, columns, rows)
+	this.astar = function(maplayout, player, enemy, end, columns, rows)
  	{
 
   		// Create start and destination as true nodes
