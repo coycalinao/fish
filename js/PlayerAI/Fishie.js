@@ -28,7 +28,6 @@ function TestBot(){
 			}
 		}
 	}
-	var start = findStart();
 	
 	this.calcmap = function (end, player, maplayout){
 	var text = "";
